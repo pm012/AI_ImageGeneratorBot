@@ -1,0 +1,4 @@
+TELEGRAM_TOKEN=here_should_be_you_Telegram_tiken
+GOOGLE_API_KEY=here_should_be_your_Google_AI_API_key
+BASE_URL=https://googleapis.javarush.com
+API_VERSION=v1beta
