@@ -1,10 +1,15 @@
 import traceback
+import os
 
 from telegram import *
 from telegram import Update
 from telegram.constants import ParseMode
 from telegram.error import TelegramError
 from telegram.ext import ContextTypes
+
+# Get the absolute path to the resources directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+RESOURCES_DIR = os.path.join(BASE_DIR, 'resouses')
 
 
 # Обробляємо помилки
@@ -72,14 +77,14 @@ async def edit_text_buttons(message: Message, text: str, buttons: dict, checkbox
 
 # надсилає в чат фото
 async def send_photo(update: Update, context: ContextTypes.DEFAULT_TYPE, name: str) -> Message:
-    path = name if "/" in name else f"resources/images/{name}.jpg"
+    path = name if os.path.isabs(name) else os.path.join(RESOURCES_DIR, 'images', f"{name}.jpg")
     with open(path, 'rb') as photo:
         return await context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo)
 
 
 # надсилає в чат відео
 async def send_video(update: Update, context: ContextTypes.DEFAULT_TYPE, name: str) -> Message:
-    path = name if "/" in name else f"resources/videos/{name}.mp4"
+    path = name if os.path.isabs(name) else os.path.join(RESOURCES_DIR, 'videos', f"{name}.mp4")
     with open(path, 'rb') as video:
         return await context.bot.send_video(chat_id=update.effective_chat.id, video=video)
 
@@ -99,19 +104,24 @@ async def hide_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # завантажує повідомлення з папки  /resources/messages/
 def load_message(name):
-    with open("resources/messages/" + name + ".txt", "r", encoding="utf8") as file:
+    path = os.path.join(RESOURCES_DIR, 'messages', f"{name}.txt")
+    with open(path, "r", encoding="utf8") as file:
         return file.read()
 
 
-# завантажує промпт з папки  /resources/messages/
+# завантажує промпт з папки  /resources/prompts/
 def load_prompt(name):
-    with open("resources/prompts/" + name + ".txt", "r", encoding="utf8") as file:
+    path = os.path.join(RESOURCES_DIR, 'prompts', f"{name}.txt")
+    with open(path, "r", encoding="utf8") as file:
         return file.read()
 
 # Сесія користувача
 class UserSession:
     def __init__(self):
         self.mode = None
+        self.image_type = "create_anime"
+        self.image_list = []
+
 
 session = UserSession()
 

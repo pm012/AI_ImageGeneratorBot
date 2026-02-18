@@ -9,7 +9,7 @@ from google import genai
 from google.genai import types
 from dotenv import load_dotenv
 
-# Читаємо ключі API з файла .env
+# Read API keys from  .env file
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 BASE_URL = os.getenv("BASE_URL")
