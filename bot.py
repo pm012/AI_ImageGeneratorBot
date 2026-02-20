@@ -1,3 +1,5 @@
+from os.path import devnull
+
 from charset_normalizer.cli import query_yes_no
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, CallbackQueryHandler, CommandHandler, \
     CallbackContext
@@ -163,7 +165,41 @@ async def party_button(update: Update, context):
     prompt = load_prompt(query)
     ai_edit_image(input_image_path=photo_path, prompt=prompt, output_path=result_path)
     await send_photo(update, context, result_path)
-    
+
+
+async def video_command(update: Update, context):
+    session.mode = "video"
+    text = load_message(session.mode)
+
+    await send_photo(update, context, session.mode)
+    await send_text_buttons(update, context, text, {
+        "video1": "🌕 Місячне затемнення(перевертень)",
+        "video2": "🩸 Прокляте дзеркало(вампір)",
+        "video3": "🧙‍♀️ Відьмине коло(дим і руни)",
+        "video4": "🧟 Гниття часу(зомбі)",
+        "video5": "😈 Пентаграма призову (демон)",
+    })
+
+async def video_button(update: Update, context):
+    # TBD: get rid of duplication
+    await update.callback_query.answer()
+    query = update.callback_query.data
+
+    user_id = update.callback_query.from_user.id
+    photo_path = f"resources/users/{user_id}/photo.jpg"
+    video_path = f"resources/users/{user_id}/video.mp4"
+
+    if not os.path.exists(photo_path):
+        await send_text(update, context, "Спочатку завантажте ваше фото")
+        return
+
+    prompt = load_prompt(query)
+    await send_text(update, context, prompt)
+    await send_text(update, context, "Генерація відео займе близько 20 секунд")
+
+    ai_video_from_text_and_image(input_image_path=photo_path,prompt=prompt, out_path=video_path)
+    await send_video(update, context, video_path)
+
 
 
 
@@ -183,11 +219,6 @@ async def on_photo(update: Update, context):
         await save_photo(update, context)
 
 
-
-
-
-
-
 # Створюємо Telegram-бота
 app = ApplicationBuilder().token(os.getenv("TELEGRAM_TOKEN")).build()
 session.mode = None
@@ -204,9 +235,11 @@ app.add_handler(CommandHandler("image", create_command))
 app.add_handler(CommandHandler("edit", edit_command))
 app.add_handler(CommandHandler("merge", merge_command))
 app.add_handler(CommandHandler("party", party_command))
+app.add_handler(CommandHandler("video", video_command))
 
 app.add_handler(CallbackQueryHandler(create_button, pattern="^create_.*"))
 app.add_handler(CallbackQueryHandler(merge_button, pattern="^merge_.*"))
 app.add_handler(CallbackQueryHandler(party_button, pattern="^party.*"))
+app.add_handler(CallbackQueryHandler(video_button, pattern="^video.*"))
 
 app.run_polling()
