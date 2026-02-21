@@ -1,15 +1,15 @@
-## 4) Кривавий зомбі
+## 4) Bloody Zombie
 PROMPT:
-Перетвори людину на фото на жахливого зомбі. Шкіра сіро-зелена, вкрита тріщинами, очі мутні з червоними прожилками. Рот відкритий, видно поламані ікла, кров і шматочки плоті на губах. Із рота — хрип, дихання парою, краплі крові стікають униз. Атмосфера абсолютного горору: туман, місяця майже не видно, червоні відблиски на обличчі.
+Turn the person in the photo into a terrifying zombie. The skin is gray-green, covered with cracks, the eyes are cloudy with red veins. The mouth is open, broken fangs are visible, blood and pieces of flesh on the lips. From the mouth - wheezing, breathing in steam, drops of blood are flowing down. The atmosphere of absolute horror: fog, the moon is almost invisible, red glare on the face.
 
-Motion beats (5–10 с):
-- 0–3 с: очі повільно відкриваються, мутні, зіниці ледь рухаються.
-- 3–6 с: рот широко розкривається, кров стікає, чути хрип.
-- 6–10 с: різкий ривок головою до камери, гучний крик, бризки крові.
+Motion beats (5–10 s):
+- 0–3 s: eyes slowly open, cloudy, pupils barely move.
+- 3–6 s: mouth opens wide, blood flows, wheezing is heard.
+- 6–10 s: sharp jerk of the head towards the camera, loud scream, blood splashes.
 
-Камера/світло:
-- Камера: різкий handheld shake у момент крику.
-- Світло: червоний миготливий фон + холодний контур.
+Camera/light:
+- Camera: sharp handheld shake at the moment of the scream.
+- Light: red flashing background + cold contour.
 
 Negative:
 no cartoon, no watermark, no logos, no text

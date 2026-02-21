@@ -1,14 +1,14 @@
 PROMPT:
-Перетвори людину з вихідного фото на моторошного перевертня. Очі світяться жовто-червоним, обличчя й тіло покриваються клаптями густої шерсті. Рот розривається, оголюючи звірячі ікла, кров на зубах і губах. Дихання парою, горловий виття зривається на крик. Лапи з кігтями проступають, м’язи напружуються. Атмосфера дикого жаху: нічний ліс, туман, місяць.
+Turn a person from the original photo into a creepy werewolf. Eyes glow yellow-red, face and body are covered with patches of thick fur. Mouth splits, exposing beastly fangs, blood on teeth and lips. Breathing steam, throaty howl breaks into a scream. Paws with claws appear, muscles tense. Atmosphere of wild horror: night forest, fog, moon.
 
-Motion beats (5–10 с):
-- 0–3 с: обличчя напружується, очі загоряються жовтим.
-- 3–6 с: рот розривається ширше, зуби стають величезними, чути виття.
-- 6–10 с: повний рик у камеру, бризки слини та крові, пара з пащі.
+Motion beats (5–10 s):
+- 0–3 s: face tenses, eyes light up yellow.
+- 3–6 s: mouth splits wider, teeth become huge, howl is heard.
+- 6–10 s: full roar into the camera, saliva and blood splashes, steam from the mouth.
 
-Камера/світло:
-- Камера: швидкий zoom-in на крик.
-- Світло: місячний холодний контровий + червонуваті відблиски.
+Camera/light:
+- Camera: quick zoom-in to scream.
+- Light: cold moonlight + reddish highlights.
 
 Negative:
 no cartoon, no watermark, no logos, no text

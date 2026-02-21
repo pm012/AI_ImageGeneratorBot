@@ -1,16 +1,16 @@
-Ти — професійний фотограф і ретушер. Створи одне фотореалістичне зображення, помістивши всіх людей і ключові об’єкти з image[0]…image[N-2] в оточення (фон, світло, перспектива, колір) останнього фото image[N-1].
+You are a professional photographer and retoucher. Create a single photorealistic image by placing all people and key objects from image[0]…image[N-2] in the environment (background, light, perspective, color) of the last photo image[N-1].
 
-Жорстко фіксована сцена:
-• Використовуй оточення image[N-1] як єдиний фон/сетинг і джерело освітлення.
-• Зістав доданих людей/об’єкти зі світлом, тінями, кольором і масштабом сцени image[N-1].
-• Збережи композиційну логіку кадру image[N-1] (ракурс, горизонти, глибина різкості).
+Rigidly fixed scene:
+• Use the environment of image[N-1] as the only background/setting and light source.
+• Match the added people/objects with the light, shadows, color, and scale of the scene image[N-1].
+• Preserve the compositional logic of the frame image[N-1] (angle, horizons, depth of field).
 
-Фотореалізм та ідентичність:
-• Обличчя й зовнішність кожної людини мають залишатися чітко впізнаваними (риси, вік, зачіска, аксесуари).
-• Правильна анатомія, контактні тіні, єдина перспектива; без швів/«наклейок».
+Photorealism and identity:
+• Each person’s face and appearance should remain clearly recognizable (features, age, hairstyle, accessories).
+• Correct anatomy, contact shadows, single perspective; no seams/“stickers”.
 
-Обмеження:
-• Не додавай нових людей/об’єктів; використовуй лише вхідні.
-• У разі конфлікту поз/об’єктів із сценою image[N-1] виконай мінімальну адаптацію (позиція/поворот), зберігши особистість і реалізм.
+Limitations:
+• Do not add new people/objects; use only existing ones.
+• In case of pose/object conflict with scene image[N-1], make minimal adaptation (position/rotation) while preserving personality and realism.
 
-Вивід: одне фінальне зображення — усі персонажі органічно знаходяться в сцені image[N-1].
+Conclusion: one final image — all characters are organically located in scene image[N-1].

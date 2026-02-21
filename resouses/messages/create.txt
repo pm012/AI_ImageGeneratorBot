@@ -1,4 +1,4 @@
-*Створюємо зображення за описом* ⚰️
-Просто напишіть опис зображення, і ШІ створить його.
+*Create image by description* ⚰️
+Just write description of the photo and AI will generate it.
 
-Обери стиль зображення:
+Select image style:

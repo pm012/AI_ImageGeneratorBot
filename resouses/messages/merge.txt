@@ -1,7 +1,7 @@
 *Об’єднуємо кілька фото* 🕷️
 
-1) 📸➕📸 Просте об’єднання всіх фото
-2) 📸➕👥 Додаємо персонажів на перше фото
-3) 👥➕📸 Додаємо персонажів на останнє фото
+1) 📸➕📸 Simple join of all images
+2) 📸➕👥 Add characters to the first photo
+3) 👥➕📸 Add characters to the last photo
 
-Надішліть кілька зображень у чат та оберіть спосіб об’єднання
+Send several images to the chat and select how to combine them

@@ -1,10 +1,10 @@
-Згенеруй фотореалістичне зображення.  
+Generate a photorealistic image.
 
-Вимоги:  
-- Стиль: гіперреалізм / кінематографічний фотореалізм.  
-- Освітлення: реалістичне, з урахуванням джерел світла та тіней.  
-- Кольори: природні, насичені, без перенасичення.  
-- Деталізація: чіткі текстури шкіри, матеріалів, оточення.  
-- Без водяних знаків, тексту й логотипів.
+Requirements:
+- Style: hyperrealism / cinematic photorealism.
+- Lighting: realistic, taking into account light sources and shadows.
+- Colors: natural, saturated, without oversaturation.
+- Detail: clear textures of skin, materials, environment.
+- No watermarks, text or logos.
 
-Опис:
+Description:

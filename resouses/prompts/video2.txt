@@ -1,16 +1,16 @@
-## 1) Кривавий вампір
+## 1) Bloody Vampire
 PROMPT:
-Перетвори людину з вихідного фото на жахливого вампіра. Обличчя бліде, шкіра як мертвий фарфор, очі горять криваво-червоним світлом. З рота виступають довгі гострі ікла, по губах і підборіддю стікає свіжа кров. Дихання парою, кожен видих — із риком і хрипом. Атмосфера абсолютного жаху: туман клубочиться, фон темний, червоні відблиски. Кінематографічна сцена, максимально лякаюча, зі звуком крику (візуально відкритий рот, напружені м’язи обличчя).
+Turn a person from the original photo into a terrifying vampire. The face is pale, the skin is like dead porcelain, the eyes burn with a blood-red light. Long sharp fangs protrude from the mouth, fresh blood flows down the lips and chin. Breathing in steam, each exhalation is accompanied by a roar and a wheeze. The atmosphere of absolute horror: the fog swirls, the background is dark, red glare. A cinematic scene, as frightening as possible, with the sound of a scream (visually open mouth, tense facial muscles).
 
-Motion beats (5–10 с):
-- 0–2 с: погляд порожній, потім різко оживає, очі спалахують червоним.
-- 2–5 с: рот відкривається, видно довгі ікла, з рота йде пара.
-- 5–8 с: кров стікає по губах і підборіддю, туман згущується.
-- 8–10 с: різкий крик/рев, обличчя спотворене, камера тремтить.
+Motion beats (5–10 s):
+- 0–2 s: the gaze is empty, then suddenly comes to life, the eyes flash red.
+- 2–5 s: the mouth opens, long fangs are visible, steam comes out of the mouth.
+- 5–8 s: blood flows down the lips and chin, the fog thickens.
+- 8–10 sec: sharp scream/roar, face distorted, camera shakes.
 
-Камера/світло:
-- Камера: повільний push-in + різкий ривок у момент крику.
-- Світло: червоний пульсуючий фон + холодний місячний контровий рімлайт.
+Camera/Lighting:
+- Camera: slow push-in + sharp jerk at the moment of the scream.
+- Light: red pulsating background + cold lunar counter rimlight.
 
 Negative:
 no cartoon, no lowres, no watermark, no logos, no text

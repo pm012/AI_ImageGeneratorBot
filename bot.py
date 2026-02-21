@@ -19,12 +19,12 @@ async def start(update: Update, context: CallbackContext):
     create_user_dir(user_id)
 
     await show_main_menu(update, context, {
-        "start": "🧟‍♂️ Головне меню бота",
-        "image": "️⚰️ Створюємо зображення",
-        "edit": "🧙‍♂️ Змінюємо зображення",
-        "merge": "📸➕📸 Об'єднуємо зображення",
-        "party": "🎃 Фото для Halloween-вечірки",
-        "video": "☠️🎬 Страшне Halloween-відео з фото"
+        "start": "🧟‍♂️ Main menu for the bot",
+        "image": "️⚰️ Create new image",
+        "edit": "🧙‍♂️ Edit existing image",
+        "merge": "📸➕📸 Merge images",
+        "party": "🎃 Photo for Halloween party",
+        "video": "☠️🎬 Scary Halloween video from photos"
     })
 
 async def create_command(update, context):
@@ -33,8 +33,8 @@ async def create_command(update, context):
     await send_photo(update, context, session.mode)
 
     await send_text_buttons(update, context, text, {
-        "create_anime": "Аніме",
-        "create_photo": "Фото",
+        "create_anime": "Anime",
+        "create_photo": "Photo",
     }, checkbox_key=session.image_type)
 
 async def create_button(update, context):
@@ -46,8 +46,8 @@ async def create_button(update, context):
     message = update.callback_query.message
 
     await edit_text_buttons(message, text, {
-        "create_anime": "Аніме",
-        "create_photo": "Фото",
+        "create_anime": "Anime",
+        "create_photo": "Photo",
     }, checkbox_key=session.image_type)
 
 async def create_message(update: Update, context):
@@ -73,7 +73,7 @@ async def edit_message(update: Update, context):
     photo_path = f"resources/users/{user_id}/photo.jpg"
 
     if not os.path.exists(photo_path):
-        await send_text(update, context, "Спочатку завантажте чи створіть зображення")
+        await send_text(update, context, "Load or create a photo first")
         return
 
     prompt = load_prompt(session.mode)
@@ -89,7 +89,7 @@ async def save_photo(update: Update, context):
     photo_path = f"resources/users/{user_id}/photo.jpg"
     await file.download_to_drive(photo_path)
 
-    await send_text(update, context, "Фото підготовлено до роботи")
+    await send_text(update, context, "Photo is ready for work")
 
 async def merge_command(update: Update, context):
     session.mode = "merge"
@@ -99,9 +99,9 @@ async def merge_command(update: Update, context):
 
     await send_photo(update, context, session.mode)
     await send_text_buttons(update, context, text, {
-        "merge_join": "Просто об'єднати зображення",
-        "merge_first": "Додати всіх на перше зображення",
-        "merge_last": "Додати всіх на останнє зображення",
+        "merge_join": "Simply merge images",
+        "merge_first": "Add all to the first image",
+        "merge_last": "Add all to the last image",
     })
 
 async def merge_add_photo(update: Update, context):
@@ -117,7 +117,7 @@ async def merge_add_photo(update: Update, context):
     await file.download_to_drive(photo_path)
     session.image_list.append(photo_path)
 
-    await send_text(update, context, f"{image_count}  фото підготовлено до роботи")
+    await send_text(update, context, f"{image_count}  photo is ready for work")
 
 async def merge_button(update: Update, context):
     await update.callback_query.answer()
@@ -128,7 +128,7 @@ async def merge_button(update: Update, context):
     result_path = f"resources/users/{user_id}/result.jpg"
 
     if len(session.image_list) < 2:
-        await send_text(update, context, "Спочатку завантажте ваше фото")
+        await send_text(update, context, "Load at least two photos first")
         return
 
     prompt = load_prompt(query)
@@ -142,11 +142,11 @@ async def party_command(update: Update, context):
 
     await send_photo(update, context, session.mode)
     await send_text_buttons(update, context, text, {
-        "party_image1": "🐺 Місячне затемнення(перевертень)",
-        "party_image2": "🦇 Прокляте дзеркало(вампір)",
-        "party_image3": "🔮 Відьмине коло(дим і руни)",
-        "party_image4": "🧟 Гниття часу(зомбі)",
-        "party_image5": "😈 Призов демона(демон)",
+        "party_image1": "🐺 Moon eclipse (reversed)",
+        "party_image2": "🦇 Cursed mirror (vampire)",
+        "party_image3": "🔮 Witch's circle (smoke and runes)",
+        "party_image4": "🧟 Decay of time (zombie)",
+        "party_image5": "😈 Demon summoning (demon)",
     })
 
 async def party_button(update: Update, context):
@@ -159,7 +159,7 @@ async def party_button(update: Update, context):
     result_path = f"resources/users/{user_id}/result.jpg"
 
     if not os.path.exists(photo_path):
-        await send_text(update, context, "Спочатку завантажте ваше фото")
+        await send_text(update, context, "Load your photo first")
         return
 
     prompt = load_prompt(query)
@@ -173,11 +173,11 @@ async def video_command(update: Update, context):
 
     await send_photo(update, context, session.mode)
     await send_text_buttons(update, context, text, {
-        "video1": "🌕 Місячне затемнення(перевертень)",
-        "video2": "🩸 Прокляте дзеркало(вампір)",
-        "video3": "🧙‍♀️ Відьмине коло(дим і руни)",
-        "video4": "🧟 Гниття часу(зомбі)",
-        "video5": "😈 Пентаграма призову (демон)",
+        "video1": "🌕 Moon eclipse (reversed)",
+        "video2": "🩸 Cursed mirror (vampire)",
+        "video3": "🧙‍♀️ Witch's circle (smoke and runes)",
+        "video4": "🧟 Decay of time (zombie)",
+        "video5": "😈 Demon summoning (demon)",
     })
 
 async def video_button(update: Update, context):
@@ -190,12 +190,12 @@ async def video_button(update: Update, context):
     video_path = f"resources/users/{user_id}/video.mp4"
 
     if not os.path.exists(photo_path):
-        await send_text(update, context, "Спочатку завантажте ваше фото")
+        await send_text(update, context, "Load your photo first")
         return
 
     prompt = load_prompt(query)
     await send_text(update, context, prompt)
-    await send_text(update, context, "Генерація відео займе близько 20 секунд")
+    await send_text(update, context, "Video generation will take about 20 seconds")
 
     ai_video_from_text_and_image(input_image_path=photo_path,prompt=prompt, out_path=video_path)
     await send_video(update, context, video_path)
@@ -209,8 +209,8 @@ async def on_message(update: Update, context):
     elif session.mode == "edit":
         await edit_message(update, context)
     else:
-        await send_text(update, context, "Привіт!")
-        await send_text(update, context, "Ви писали "+ update.message.text)
+        await send_text(update, context, "Hello!")
+        await send_text(update, context, "You wrote: "+ update.message.text)
 
 async def on_photo(update: Update, context):
     if session.mode == "merge":

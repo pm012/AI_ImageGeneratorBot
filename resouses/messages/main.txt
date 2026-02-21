@@ -1,15 +1,15 @@
-Пробуди в собі монстра! 🧟‍♂️
+Awaken you inner monster! 🧟‍♂️
 
-*Чат-бот уміє*:
-1. Генерувати зображення за описом ⚰️
-2. Редагувати фото словами 🧙‍♂️
-3. Перетворювати ваші фото у Halloween-style ☠️
-4. Генерувати Halloween-відео з фото 🧛
+*Chat-bot can*:
+1. Generate image by description ⚰️
+2. Edit photo based on your description 🧙‍♂️
+3. Convert your phot to Halloween-style ☠️
+4. Generate Halloween-video from loaded photo 🧛
 
-*Корисні команди та посилання:* 
-1. /start — головне меню бота 🧟‍♂️
-2. /image — створюємо зображення ⚰️
-3. /edit — змінюємо зображення 🧙‍♂️
-2. /merge — об’єднуємо зображення 📸➕📸
-5. /party — фото з вечірки на Halloween ️ ️🎃
-6. /video - моторошне відео з фото ☠️🎬
+*Useful commnds and links:* 
+1. /start — bot main menu 🧟‍♂️
+2. /image — create image⚰️
+3. /edit — change image 🧙‍♂️
+2. /merge — combine images 📸➕📸
+5. /party — photo from  Halloween ️party ️🎃
+6. /video - scary video from photo ☠️🎬

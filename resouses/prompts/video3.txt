@@ -1,16 +1,16 @@
-## 3) Відьма жаху
+## 3) Horror Witch
 PROMPT:
-Перетвори людину на фото на страшну відьму. Обличчя виснажене, шкіра бліда з тріщинами, очі горять зеленим вогнем. Волосся розвівається, рот відкривається в дикому вереску, видно ікла. З рук виривається зелене полум’я, кров на губах і зубах. Атмосфера жаху: клубочиться туман, червоні та зелені спалахи, фон із місячним світлом.
+Turn the person in the photo into a scary witch. The face is exhausted, the skin is pale with cracks, the eyes burn with green fire. The hair flutters, the mouth opens in a wild scream, fangs are visible. Green flames burst from the hands, blood on the lips and teeth. Horror atmosphere: swirling fog, red and green flashes, background with moonlight.
 
-Motion beats (5–10 с):
-- 0–2 с: очі спалахують зеленим.
-- 2–5 с: рот відкривається, чути беззвучний вереск, волосся колишеться.
-- 5–8 с: із рук спалахує зелене полум’я, кров на губах.
-- 8–10 с: крик у камеру, зелені іскри розлітаються.
+Motion beats (5–10 s):
+- 0–2 s: eyes flash green.
+- 2–5 s: mouth opens, a silent scream is heard, hair sways.
+- 5–8 s: green flames flash from the hands, blood on the lips.
+- 8–10 s: scream into the camera, green sparks fly.
 
-Камера/світло:
-- Камера: плавний orbit навколо, різкий zoom на крик.
-- Світло: зелене полум’я + червоні спалахи + холодний контур.
+Camera/light:
+- Camera: smooth orbit around, sharp zoom on the scream.
+- Light: green flame + red flashes + cold outline.
 
 Negative:
 no cartoon, no watermark, no logos, no text

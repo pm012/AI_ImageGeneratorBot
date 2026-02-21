@@ -1,17 +1,17 @@
-Ти — професійний фотограф і ретушер. Створи одне фотореалістичне зображення, об’єднавши людей і ключові об’єкти з усіх вхідних фото (image[0]…image[N-1]) в ОДНУ сцену.
+You are a professional photographer and retoucher. Create a single photorealistic image by combining people and key objects from all input photos (image[0]…image[N-1]) into ONE scene.
 
-Мета:
-• Сформувати логічну спільну ситуацію, комбінуючи оточення/дію з вхідних фото (наприклад, локація з одного фото + активність з іншого), без відчуття колажу.
+Goal:
+• Form a logical overall situation by combining the environment/action from the input photos (e.g. location from one photo + activity from another), without feeling like a collage.
 
-Вимоги фотореалізму:
-• Збережи обличчя й зовнішність кожної людини впізнаваними (форма обличчя, риси, вік, відтінок шкіри, зачіски, аксесуари).
-• Єдині світло, тіні (включно з контактними), колірний баланс, перспектива, масштаб і глибина різкості.
-• Коректна анатомія (включно з руками/пальцями), відсутність артефактів і «склейок».
-• Допускається м’яка корекція поз/ракурсів для природної взаємодії персонажів, але без зміни ідентичності.
+Photorealism requirements:
+• Keep each person’s face and appearance recognizable (face shape, features, age, skin tone, hairstyles, accessories).
+• Uniform lighting, shadows (including contact), color balance, perspective, scale, and depth of field.
+• Correct anatomy (including hands/fingers), no artifacts or “glues”.
+• Mild correction of poses/angles is allowed for natural interaction of characters, but without changing their identity.
 
-Композиція та вміст:
-• Розмісти всіх людей у кадрі так, щоб вони природно взаємодіяли в одній сцені.
-• Не додавай нових людей/об’єктів; використовуй лише те, що дано на вході.
-• Якщо елементи конфліктують (несумісні локації/дії), обери найбільш правдоподібну комбінацію (наприклад, лісова галявина + гра в м’яч), пріоритезуючи реалізм.
+Composition and content:
+• Place all people in the frame so that they interact naturally in the same scene.
+• Do not add new people/objects; use only what is given in the input.
+• If elements conflict (incompatible locations/actions), choose the most plausible combination (e.g. forest clearing + ball game), prioritizing realism.
 
-Вивід: одне фінальне зображення, цілісний фотореалістичний кадр без рамок і колажних швів.
+Output: one final image, a solid photorealistic frame without frames or collage seams.

@@ -12,9 +12,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 RESOURCES_DIR = os.path.join(BASE_DIR, 'resouses')
 
 
-# Обробляємо помилки
+# Handling errors
 async def error_handler(update, context):
-    # Можна показати traceback у консолі
+    # To show  traceback in the console
     traceback.print_exception(type(context.error), context.error, context.error.__traceback__)
 
     try:
@@ -26,13 +26,13 @@ async def error_handler(update, context):
                 message = str(context.error)
             await update.effective_message.reply_text(f"⚠️ {message}")
     except TelegramError:
-        pass  # якщо повідомлення вже видалено або чат недоступний
+        pass  # If the message has already been deleted or chat is not accessible, ignore the error
 
 
-# Надсилає в чат текстове повідомлення
+# Sends text message
 async def send_text(update: Update, context: ContextTypes.DEFAULT_TYPE, text: str) -> Message:
     if text.count('_') % 2 != 0:
-        message = f"Рядок '{text}' є невалідним з точки зору markdown. Скористайтеся методом send_html()"
+        message = f"Row '{text}' is invalid from the markdown point of view. Use send_html() method instead or fix the markdown formatting. Original text: {text}"
         print(message)
         return await update.message.reply_text(message)
 
@@ -40,13 +40,13 @@ async def send_text(update: Update, context: ContextTypes.DEFAULT_TYPE, text: st
     return await context.bot.send_message(chat_id=update.effective_chat.id, text=text, parse_mode=ParseMode.MARKDOWN)
 
 
-# надсилає в чат HTML-повідомлення
+# Sends  HTML-message to the chat
 async def send_html(update: Update, context: ContextTypes.DEFAULT_TYPE, text: str) -> Message:
     text = text.encode('utf16', errors='surrogatepass').decode('utf16')
     return await context.bot.send_message(chat_id=update.effective_chat.id, text=text, parse_mode=ParseMode.HTML)
 
 
-# надсилає в чат текстове повідомлення та додає до нього кнопки
+# Sends text message with inline buttons
 async def send_text_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE, text: str, buttons: dict,
                             checkbox_key: str = None) -> Message:
     text = text.encode('utf16', errors='surrogatepass').decode('utf16')
@@ -59,7 +59,7 @@ async def send_text_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE, 
     return await update.message.reply_text(text, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
 
 
-# Змінює наявне повідомлення з кнопками
+# Change current mesage text and inline buttons
 async def edit_text_buttons(message: Message, text: str, buttons: dict, checkbox_key: str = None) -> Message:
     text = text.encode('utf16', errors='surrogatepass').decode('utf16')
     keyboard = []
@@ -75,47 +75,47 @@ async def edit_text_buttons(message: Message, text: str, buttons: dict, checkbox
         return await message.edit_text(text, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
 
 
-# надсилає в чат фото
+# Sends photo to the chat
 async def send_photo(update: Update, context: ContextTypes.DEFAULT_TYPE, name: str) -> Message:
     path = name if os.path.isabs(name) else os.path.join(RESOURCES_DIR, 'images', f"{name}.jpg")
     with open(path, 'rb') as photo:
         return await context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo)
 
 
-# надсилає в чат відео
+# Sends video to the chat
 async def send_video(update: Update, context: ContextTypes.DEFAULT_TYPE, name: str) -> Message:
     path = name if os.path.isabs(name) else os.path.join(RESOURCES_DIR, 'videos', f"{name}.mp4")
     with open(path, 'rb') as video:
         return await context.bot.send_video(chat_id=update.effective_chat.id, video=video)
 
 
-# відображає команду та головне меню
+# Shows command and the main menu
 async def show_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE, commands: dict):
     command_list = [BotCommand(key, value) for key, value in commands.items()]
     await context.bot.set_my_commands(command_list, scope=BotCommandScopeChat(chat_id=update.effective_chat.id))
     await context.bot.set_chat_menu_button(menu_button=MenuButtonCommands(), chat_id=update.effective_chat.id)
 
 
-# Видаляємо команди для конкретного чату
+# Remove commands for the chat and set default menu button
 async def hide_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.delete_my_commands(scope=BotCommandScopeChat(chat_id=update.effective_chat.id))
     await context.bot.set_chat_menu_button(menu_button=MenuButtonDefault(), chat_id=update.effective_chat.id)
 
 
-# завантажує повідомлення з папки  /resources/messages/
+# Loads a message from the folder  /resources/messages/
 def load_message(name):
     path = os.path.join(RESOURCES_DIR, 'messages', f"{name}.txt")
     with open(path, "r", encoding="utf8") as file:
         return file.read()
 
 
-# завантажує промпт з папки  /resources/prompts/
+# Load prompt from the folder  /resources/prompts/
 def load_prompt(name):
     path = os.path.join(RESOURCES_DIR, 'prompts', f"{name}.txt")
     with open(path, "r", encoding="utf8") as file:
         return file.read()
 
-# Сесія користувача
+# User sesstion to store user-specific data such as the current mode (create/edit) and selected image type (anime/photo), allowing for personalized interactions and state management within the bot.
 class UserSession:
     def __init__(self):
         self.mode = None
